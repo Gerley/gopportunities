@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  go:
+    build: .
+    ports:
+      - "8080:8080"
+    container_name: go
+    tty: true
+    stdin_open: true
+    volumes:
+      - .:/app
+
+  # db:
+  #   image: postgres:15
+  #   environment:
+  #     POSTGRES_USER: postgres
+  #     POSTGRES_PASSWORD: postgres
+  #     POSTGRES_DB: minhaapp
+  #   ports:
+  #     - "5432:5432"
+  #   volumes:
+  #     - postgres_data:/var/lib/postgresql/data
+
+  # migrate:
+  #   image: migrate/migrate
+  #   environment:
+  #     DB_CONN: "postgres://postgres:postgres@db:5432/minhaapp?sslmode=disable"
+  #   depends_on:
+  #     - db
+  #   volumes:
+  #     - ./migrations:/migrations
+  #   tty: true
+  #   stdin_open: true
+  #   command: [
+  #     "-path", "/migrations",
+  #     "-database", "postgres://postgres:postgres@db:5432/minhaapp?sslmode=disable",
+  #     "up"
+  #   ]
+
+# volumes:
+#   postgres_data:
