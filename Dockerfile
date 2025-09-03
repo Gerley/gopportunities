@@ -2,6 +2,8 @@ FROM golang:1.24-alpine
 
 WORKDIR /app
 
+RUN apk add build-base
+
 # Instalar dependências
 # RUN apk add --no-cache curl ca-certificates
 
