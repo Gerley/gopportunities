@@ -22,5 +22,3 @@ func main() {
 	// Initialize Router
 	router.Initialize()
 }
-
-// https://www.youtube.com/watch?v=wyEYpX5U4Vg
